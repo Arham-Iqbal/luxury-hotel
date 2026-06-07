@@ -267,7 +267,7 @@ export default function Home() {
                 ))}
               </View>
               <Hairline style={{ maxWidth: 280, marginVertical: spacing.md }} />
-              <Text style={styles.footerFine}>© 2026 {BRAND.full}. A portfolio demo — not a real booking service.</Text>
+              <Text style={styles.footerFine}>© 2026 {BRAND.full}. All rights reserved.</Text>
             </View>
           </View>
         </View>

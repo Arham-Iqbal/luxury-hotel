@@ -146,7 +146,7 @@ export function BookingModal({
             disabled={!valid}
             onPress={confirm}
           />
-          <Text style={styles.fine}>Free cancellation up to 48h before check-in · Demo booking — no payment taken.</Text>
+          <Text style={styles.fine}>Free cancellation up to 48 hours before check-in.</Text>
         </Pressable>
       </Pressable>
     </Modal>

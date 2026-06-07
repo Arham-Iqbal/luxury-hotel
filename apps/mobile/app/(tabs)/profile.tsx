@@ -75,8 +75,6 @@ function AuthForm() {
             <Text style={styles.switchLink}>{mode === "login" ? "Create an account" : "Sign in"}</Text>
           </Text>
         </Pressable>
-
-        <Text style={styles.demoHint}>Demo: any email + password works.</Text>
       </View>
     </View>
   );
@@ -129,7 +127,7 @@ function Account({ user }: { user: User }) {
       </View>
 
       <Button label="Sign out" variant="outline" full onPress={logout} style={{ marginTop: spacing.lg }} />
-      <Text style={styles.version}>{BRAND.full} · v1.0.0 — demo portfolio build</Text>
+      <Text style={styles.version}>{BRAND.full} · v1.0.0</Text>
     </View>
   );
 }
@@ -177,7 +175,6 @@ const styles = StyleSheet.create({
   error: { color: colors.danger, fontSize: fontSize.sm, marginTop: spacing.sm, fontWeight: "600" },
   switchText: { fontSize: fontSize.md, color: colors.textMuted, textAlign: "center" },
   switchLink: { color: colors.navy, fontWeight: "800" },
-  demoHint: { fontSize: fontSize.xs, color: colors.textFaint, textAlign: "center", marginTop: spacing.md },
   profileHead: { flexDirection: "row", alignItems: "center", gap: spacing.md, marginTop: spacing.lg },
   bigAvatar: { width: 72, height: 72, borderRadius: 36, backgroundColor: colors.navy, alignItems: "center", justifyContent: "center" },
   bigAvatarText: { color: colors.gold, fontSize: fontSize.xxl, fontFamily: fonts.serif },

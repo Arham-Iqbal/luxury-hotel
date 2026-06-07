@@ -63,7 +63,6 @@ function StaffLogin() {
           <Pressable style={styles.loginBtn} onPress={submit}>
             <Text style={styles.loginBtnText}>Sign in</Text>
           </Pressable>
-          <Text style={styles.loginHint}>Demo · {ADMIN_EMAIL} / aurelia-admin</Text>
         </View>
       </View>
     </SafeAreaView>
@@ -503,7 +502,6 @@ const styles = StyleSheet.create({
   loginError: { color: "#E2867F", fontSize: fontSize.sm, marginTop: spacing.md, fontWeight: "600" },
   loginBtn: { backgroundColor: colors.gold, height: 50, borderRadius: radius.md, alignItems: "center", justifyContent: "center", marginTop: spacing.lg },
   loginBtnText: { color: colors.navy, fontFamily: fonts.sansBold, fontSize: fontSize.md },
-  loginHint: { fontSize: fontSize.xs, color: colors.textOnDarkMuted, textAlign: "center", marginTop: spacing.md },
   adminHeader: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingHorizontal: spacing.lg, paddingVertical: spacing.md, borderBottomWidth: 1, borderBottomColor: colors.borderDark, gap: spacing.md, flexWrap: "wrap" },
   adminBrand: { flexDirection: "row", alignItems: "center", gap: spacing.sm },
   staffMarkSm: { width: 34, height: 34, borderRadius: radius.sm, backgroundColor: colors.gold, alignItems: "center", justifyContent: "center" },
