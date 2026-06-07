@@ -1,0 +1,15 @@
+node_modules/
+.expo/
+dist/
+web-build/
+*.log
+.env
+.env.local
+.DS_Store
+apps/mobile/.expo/
+apps/mobile/dist/
+.vercel
+.idea/
+.vscode/
+*.tsbuildinfo
+.gstack/

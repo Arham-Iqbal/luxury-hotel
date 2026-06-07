@@ -1,0 +1,1100 @@
+// packages/data/src/hotels.ts
+var img = (id, w = 1200) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
+var stdAmenities = [
+  "Infinity pool",
+  "Spa & wellness",
+  "Fine dining",
+  "Concierge",
+  "Free Wi-Fi",
+  "Airport transfer",
+  "Fitness center",
+  "Room service"
+];
+var HOTELS = [
+  {
+    id: "h-santorini-cliff",
+    slug: "celestine-cliff-santorini",
+    name: "Celestine Cliff Suites",
+    tagline: "Caldera-edge suites with private plunge pools",
+    city: "Oia, Santorini",
+    country: "Greece",
+    region: "Europe",
+    category: "Boutique",
+    starRating: 5,
+    rating: 4.9,
+    reviewCount: 1284,
+    pricePerNight: 920,
+    currency: "USD",
+    heroImage: img("photo-1570077188670-e3a8d69ac5ff"),
+    gallery: [
+      img("photo-1570077188670-e3a8d69ac5ff"),
+      img("photo-1611892440504-42a792e24d32"),
+      img("photo-1582719508461-905c673771fd"),
+      img("photo-1584132967334-10e028bd69f7")
+    ],
+    description: "Carved into the volcanic cliffs of Oia, Celestine Cliff Suites offers a serene retreat above the Aegean. Whitewashed terraces, private plunge pools, and uninterrupted caldera sunsets define a stay that is quietly extraordinary.",
+    highlights: [
+      "Uninterrupted caldera sunset views",
+      "Private heated plunge pools",
+      "Curated wine cellar tastings",
+      "Adults-only sanctuary"
+    ],
+    amenities: stdAmenities.concat(["Plunge pool", "Sunset terrace", "Wine cellar"]),
+    rooms: [
+      {
+        id: "r-cliff-junior",
+        name: "Junior Caldera Suite",
+        description: "Open-plan suite with a private terrace and caldera view.",
+        pricePerNight: 920,
+        maxGuests: 2,
+        beds: "1 King",
+        sizeSqm: 42,
+        amenities: ["Terrace", "Espresso machine", "Rain shower"],
+        image: img("photo-1611892440504-42a792e24d32", 900)
+      },
+      {
+        id: "r-cliff-plunge",
+        name: "Plunge Pool Suite",
+        description: "Private heated plunge pool overlooking the Aegean.",
+        pricePerNight: 1480,
+        maxGuests: 2,
+        beds: "1 King",
+        sizeSqm: 58,
+        amenities: ["Private pool", "Outdoor lounge", "Sunset terrace"],
+        image: img("photo-1582719508461-905c673771fd", 900)
+      }
+    ],
+    reviews: [
+      {
+        id: "rv-1",
+        author: "Am\xE9lie R.",
+        country: "France",
+        rating: 5,
+        date: "2026-04-18",
+        title: "The sunset alone is worth it",
+        body: "Impeccable service and the most romantic terrace we've ever stayed on. The plunge pool at dusk is unforgettable."
+      },
+      {
+        id: "rv-2",
+        author: "David K.",
+        country: "USA",
+        rating: 5,
+        date: "2026-03-02",
+        title: "Flawless boutique stay",
+        body: "Small, intimate, and every detail considered. The concierge arranged a private catamaran day for us."
+      }
+    ],
+    lat: 36.4618,
+    lng: 25.3753,
+    address: "Nik. Nomikou, Oia 847 02, Santorini",
+    featured: true,
+    badges: ["Adults Only", "Sea View", "Sunset"]
+  },
+  {
+    id: "h-maldives-overwater",
+    slug: "azure-lagoon-maldives",
+    name: "Azure Lagoon Maldives",
+    tagline: "Overwater villas above a protected coral reef",
+    city: "Baa Atoll",
+    country: "Maldives",
+    region: "Asia",
+    category: "Beach Resort",
+    starRating: 5,
+    rating: 4.95,
+    reviewCount: 2041,
+    pricePerNight: 1650,
+    currency: "USD",
+    heroImage: img("photo-1439066615861-d1af74d74000"),
+    gallery: [
+      img("photo-1439066615861-d1af74d74000"),
+      img("photo-1602002418082-a4443e081dd1"),
+      img("photo-1573843981267-be1999ff37cd"),
+      img("photo-1540541338287-41700207dee6")
+    ],
+    description: "A private island in the UNESCO Biosphere Baa Atoll, Azure Lagoon pairs glass-floor overwater villas with one of the healthiest house reefs in the Maldives. Swim with manta rays steps from your deck.",
+    highlights: [
+      "Overwater villas with glass floors",
+      "House reef snorkeling & manta season",
+      "Overwater spa pavilions",
+      "Seaplane arrival included"
+    ],
+    amenities: stdAmenities.concat(["Overwater villa", "House reef", "Dive center", "Seaplane transfer"]),
+    rooms: [
+      {
+        id: "r-mald-water",
+        name: "Overwater Villa",
+        description: "Glass-floor villa with direct lagoon access and sun deck.",
+        pricePerNight: 1650,
+        maxGuests: 2,
+        beds: "1 King",
+        sizeSqm: 95,
+        amenities: ["Glass floor", "Direct lagoon access", "Sun deck"],
+        image: img("photo-1602002418082-a4443e081dd1", 900)
+      },
+      {
+        id: "r-mald-pool",
+        name: "Overwater Pool Villa",
+        description: "Private infinity pool suspended over the lagoon.",
+        pricePerNight: 2480,
+        maxGuests: 3,
+        beds: "1 King + Daybed",
+        sizeSqm: 130,
+        amenities: ["Private pool", "Butler service", "Outdoor bath"],
+        image: img("photo-1573843981267-be1999ff37cd", 900)
+      }
+    ],
+    reviews: [
+      {
+        id: "rv-3",
+        author: "Sophia L.",
+        country: "Singapore",
+        rating: 5,
+        date: "2026-05-09",
+        title: "Honeymoon perfection",
+        body: "Waking up to rays gliding under the glass floor was surreal. Butler service was discreet and faultless."
+      }
+    ],
+    lat: 5.2056,
+    lng: 73.0656,
+    address: "Baa Atoll, Republic of Maldives",
+    featured: true,
+    badges: ["Overwater", "Beachfront", "All-Inclusive"]
+  },
+  {
+    id: "h-swiss-alps",
+    slug: "glacier-vista-zermatt",
+    name: "Glacier Vista Lodge",
+    tagline: "Alpine luxury beneath the Matterhorn",
+    city: "Zermatt",
+    country: "Switzerland",
+    region: "Europe",
+    category: "Mountain Lodge",
+    starRating: 5,
+    rating: 4.85,
+    reviewCount: 932,
+    pricePerNight: 1120,
+    currency: "USD",
+    heroImage: img("photo-1551524559-8af4e6624178"),
+    gallery: [
+      img("photo-1551524559-8af4e6624178"),
+      img("photo-1521295121783-8a321d551ad2"),
+      img("photo-1502672260266-1c1ef2d93688"),
+      img("photo-1455587734955-081b22074882")
+    ],
+    description: "Ski-in, ski-out elegance with floor-to-ceiling views of the Matterhorn. Glacier Vista blends warm Alpine timber with a glass-walled spa, an outdoor thermal pool, and a Michelin-recognized mountain table.",
+    highlights: [
+      "Direct Matterhorn views",
+      "Ski-in, ski-out access",
+      "Outdoor thermal pool & glacier spa",
+      "Private ski concierge"
+    ],
+    amenities: stdAmenities.concat(["Ski-in/ski-out", "Thermal pool", "Fireplace lounge", "Ski concierge"]),
+    rooms: [
+      {
+        id: "r-alps-deluxe",
+        name: "Deluxe Matterhorn Room",
+        description: "Timber-clad room with a balcony framing the peak.",
+        pricePerNight: 1120,
+        maxGuests: 2,
+        beds: "1 King",
+        sizeSqm: 38,
+        amenities: ["Balcony", "Heated floors", "Mountain view"],
+        image: img("photo-1521295121783-8a321d551ad2", 900)
+      },
+      {
+        id: "r-alps-chalet",
+        name: "Two-Bedroom Chalet Suite",
+        description: "Private chalet suite with a fireplace lounge.",
+        pricePerNight: 2240,
+        maxGuests: 4,
+        beds: "1 King + 2 Twin",
+        sizeSqm: 92,
+        amenities: ["Fireplace", "Private sauna", "Kitchenette"],
+        image: img("photo-1502672260266-1c1ef2d93688", 900)
+      }
+    ],
+    reviews: [
+      {
+        id: "rv-4",
+        author: "Markus W.",
+        country: "Germany",
+        rating: 5,
+        date: "2026-02-14",
+        title: "Best ski trip of our lives",
+        body: "Stepping off the slopes straight into the thermal pool with the Matterhorn glowing pink \u2014 unmatched."
+      }
+    ],
+    lat: 46.0207,
+    lng: 7.7491,
+    address: "Bahnhofstrasse, 3920 Zermatt",
+    featured: true,
+    badges: ["Ski-in/out", "Mountain View", "Spa"]
+  },
+  {
+    id: "h-dubai-sky",
+    slug: "meridian-sky-dubai",
+    name: "Meridian Sky Dubai",
+    tagline: "Sky-high suites on the Palm waterfront",
+    city: "Dubai",
+    country: "United Arab Emirates",
+    region: "Middle East",
+    category: "City Hotel",
+    starRating: 5,
+    rating: 4.8,
+    reviewCount: 3120,
+    pricePerNight: 780,
+    currency: "USD",
+    heroImage: img("photo-1512453979798-5ea266f8880c"),
+    gallery: [
+      img("photo-1512453979798-5ea266f8880c"),
+      img("photo-1582719478250-c89cae4dc85b"),
+      img("photo-1551882547-ff40c63fe5fa"),
+      img("photo-1496417263034-38ec4f0b665a")
+    ],
+    description: "A vertical resort on the Palm Jumeirah, Meridian Sky delivers rooftop infinity pools, a 64th-floor spa, and ten dining concepts. The skyline and the Gulf are yours from every suite.",
+    highlights: [
+      "Rooftop infinity pool deck",
+      "64th-floor sky spa",
+      "Ten signature restaurants",
+      "Private beach club access"
+    ],
+    amenities: stdAmenities.concat(["Rooftop pool", "Sky lounge", "Beach club", "Butler service"]),
+    rooms: [
+      {
+        id: "r-dubai-skyline",
+        name: "Skyline Deluxe",
+        description: "Floor-to-ceiling windows over the marina skyline.",
+        pricePerNight: 780,
+        maxGuests: 2,
+        beds: "1 King",
+        sizeSqm: 48,
+        amenities: ["Skyline view", "Smart room", "Marble bath"],
+        image: img("photo-1582719478250-c89cae4dc85b", 900)
+      },
+      {
+        id: "r-dubai-palm",
+        name: "Palm Panorama Suite",
+        description: "Corner suite with a wraparound Gulf-facing terrace.",
+        pricePerNight: 1490,
+        maxGuests: 3,
+        beds: "1 King + Sofa",
+        sizeSqm: 88,
+        amenities: ["Terrace", "Lounge access", "Butler service"],
+        image: img("photo-1551882547-ff40c63fe5fa", 900)
+      }
+    ],
+    reviews: [
+      {
+        id: "rv-5",
+        author: "Reema A.",
+        country: "Saudi Arabia",
+        rating: 5,
+        date: "2026-04-28",
+        title: "City glamour done right",
+        body: "The rooftop pool at night over the Palm is something else. Service was warm and quick at every turn."
+      }
+    ],
+    lat: 25.1124,
+    lng: 55.139,
+    address: "Palm Jumeirah, Dubai",
+    featured: false,
+    badges: ["City View", "Rooftop Pool", "Beach Club"]
+  },
+  {
+    id: "h-kyoto-ryokan",
+    slug: "kintsugi-ryokan-kyoto",
+    name: "Kintsugi Ryokan",
+    tagline: "A modern ryokan in the temple district",
+    city: "Kyoto",
+    country: "Japan",
+    region: "Asia",
+    category: "Boutique",
+    starRating: 5,
+    rating: 4.92,
+    reviewCount: 654,
+    pricePerNight: 640,
+    currency: "USD",
+    heroImage: img("photo-1545569341-9eb8b30979d9"),
+    gallery: [
+      img("photo-1545569341-9eb8b30979d9"),
+      img("photo-1490806843957-31f4c9a91c65"),
+      img("photo-1528360983277-13d401cdc186"),
+      img("photo-1503899036084-c55cdd92da26")
+    ],
+    description: "Hidden behind a moss garden in Higashiyama, Kintsugi reimagines the traditional ryokan with private onsen baths, kaiseki dining, and tatami suites that open onto a centuries-old courtyard.",
+    highlights: [
+      "Private cypress onsen baths",
+      "Multi-course kaiseki dinners",
+      "Moss garden courtyard",
+      "Tea ceremony & calligraphy"
+    ],
+    amenities: ["Private onsen", "Kaiseki dining", "Tea ceremony", "Garden", "Free Wi-Fi", "Concierge"],
+    rooms: [
+      {
+        id: "r-kyoto-tatami",
+        name: "Garden Tatami Suite",
+        description: "Tatami suite opening onto the private moss garden.",
+        pricePerNight: 640,
+        maxGuests: 2,
+        beds: "Futon (2)",
+        sizeSqm: 44,
+        amenities: ["Garden view", "Tea set", "Yukata"],
+        image: img("photo-1490806843957-31f4c9a91c65", 900)
+      },
+      {
+        id: "r-kyoto-onsen",
+        name: "Onsen Suite",
+        description: "Suite with a private indoor-outdoor cypress bath.",
+        pricePerNight: 980,
+        maxGuests: 2,
+        beds: "1 King + Futon",
+        sizeSqm: 62,
+        amenities: ["Private onsen", "Courtyard", "Butler"],
+        image: img("photo-1528360983277-13d401cdc186", 900)
+      }
+    ],
+    reviews: [
+      {
+        id: "rv-6",
+        author: "Hannah T.",
+        country: "Australia",
+        rating: 5,
+        date: "2026-03-21",
+        title: "Pure tranquility",
+        body: "The private onsen under the stars and the kaiseki dinner were the highlight of three weeks in Japan."
+      }
+    ],
+    lat: 35.0036,
+    lng: 135.7788,
+    address: "Higashiyama Ward, Kyoto",
+    featured: true,
+    badges: ["Onsen", "Garden", "Cultural"]
+  },
+  {
+    id: "h-tanzania-safari",
+    slug: "savanna-ridge-serengeti",
+    name: "Savanna Ridge Camp",
+    tagline: "Tented suites on the Serengeti migration route",
+    city: "Serengeti",
+    country: "Tanzania",
+    region: "Africa",
+    category: "Safari Lodge",
+    starRating: 5,
+    rating: 4.88,
+    reviewCount: 421,
+    pricePerNight: 1340,
+    currency: "USD",
+    heroImage: img("photo-1516426122078-c23e76319801"),
+    gallery: [
+      img("photo-1516426122078-c23e76319801"),
+      img("photo-1547471080-7cc2caa01a7e"),
+      img("photo-1534177616072-ef7dc120449d"),
+      img("photo-1469474968028-56623f02e42e")
+    ],
+    description: "An intimate luxury camp following the Great Migration, Savanna Ridge offers canvas suites with copper soaking tubs, private decks over the plains, and twice-daily game drives with expert Maasai guides.",
+    highlights: [
+      "Front-row Great Migration views",
+      "Private deck plunge & soaking tub",
+      "Twice-daily guided game drives",
+      "Bush dinners under the stars"
+    ],
+    amenities: ["Game drives", "Bush dining", "Soaking tub", "Private deck", "All-inclusive", "Concierge"],
+    rooms: [
+      {
+        id: "r-safari-tent",
+        name: "Luxury Tented Suite",
+        description: "Canvas suite with a copper tub and plains-facing deck.",
+        pricePerNight: 1340,
+        maxGuests: 2,
+        beds: "1 King",
+        sizeSqm: 70,
+        amenities: ["Private deck", "Copper tub", "Game drives"],
+        image: img("photo-1547471080-7cc2caa01a7e", 900)
+      },
+      {
+        id: "r-safari-family",
+        name: "Family Tented Villa",
+        description: "Two connected suites with a shared lounge deck.",
+        pricePerNight: 2380,
+        maxGuests: 4,
+        beds: "1 King + 2 Twin",
+        sizeSqm: 120,
+        amenities: ["Two bedrooms", "Lounge deck", "Private guide"],
+        image: img("photo-1534177616072-ef7dc120449d", 900)
+      }
+    ],
+    reviews: [
+      {
+        id: "rv-7",
+        author: "James O.",
+        country: "UK",
+        rating: 5,
+        date: "2026-01-30",
+        title: "A bucket-list experience",
+        body: "We watched the river crossing from our deck with coffee. The guides were extraordinary and the camp pure luxury."
+      }
+    ],
+    lat: -2.3333,
+    lng: 34.8333,
+    address: "Central Serengeti, Tanzania",
+    featured: false,
+    badges: ["Safari", "All-Inclusive", "Wildlife"]
+  },
+  {
+    id: "h-tuscany-villa",
+    slug: "borgo-oliveto-tuscany",
+    name: "Borgo Oliveto",
+    tagline: "A restored hilltop villa among the vineyards",
+    city: "Val d'Orcia, Tuscany",
+    country: "Italy",
+    region: "Europe",
+    category: "Villa",
+    starRating: 5,
+    rating: 4.87,
+    reviewCount: 538,
+    pricePerNight: 860,
+    currency: "USD",
+    heroImage: img("photo-1523217582562-09d0def993a6"),
+    gallery: [
+      img("photo-1523217582562-09d0def993a6"),
+      img("photo-1505693416388-ac5ce068fe85"),
+      img("photo-1444201983204-c43cbd584d93"),
+      img("photo-1564013799919-ab600027ffc6")
+    ],
+    description: "A lovingly restored 17th-century borgo surrounded by olive groves and vineyards. Borgo Oliveto offers a heated infinity pool, a private chef, and cellar tastings of estate-grown Brunello.",
+    highlights: [
+      "Estate vineyard & olive grove",
+      "Heated infinity pool over the valley",
+      "Private chef & cellar tastings",
+      "Cooking classes with the estate chef"
+    ],
+    amenities: stdAmenities.concat(["Vineyard", "Private chef", "Olive grove", "Cooking classes"]),
+    rooms: [
+      {
+        id: "r-tuscany-classic",
+        name: "Classic Borgo Room",
+        description: "Beamed room with terracotta floors and valley views.",
+        pricePerNight: 860,
+        maxGuests: 2,
+        beds: "1 Queen",
+        sizeSqm: 36,
+        amenities: ["Valley view", "Antique decor", "Garden access"],
+        image: img("photo-1505693416388-ac5ce068fe85", 900)
+      },
+      {
+        id: "r-tuscany-master",
+        name: "Master Vineyard Suite",
+        description: "Top-floor suite with a private terrace over the vines.",
+        pricePerNight: 1520,
+        maxGuests: 3,
+        beds: "1 King + Daybed",
+        sizeSqm: 75,
+        amenities: ["Private terrace", "Soaking tub", "Vineyard view"],
+        image: img("photo-1444201983204-c43cbd584d93", 900)
+      }
+    ],
+    reviews: [
+      {
+        id: "rv-8",
+        author: "Isabella M.",
+        country: "Canada",
+        rating: 5,
+        date: "2026-05-22",
+        title: "Like a dream in the countryside",
+        body: "The chef's dinners under the pergola and the wine tasting in the cellar made this the trip of a lifetime."
+      }
+    ],
+    lat: 43.0676,
+    lng: 11.6126,
+    address: "Val d'Orcia, 53027 Tuscany",
+    featured: false,
+    badges: ["Vineyard", "Pool", "Private Chef"]
+  },
+  {
+    id: "h-nyc-grand",
+    slug: "the-fifth-avenue-grand",
+    name: "The Fifth Avenue Grand",
+    tagline: "Timeless glamour off Central Park",
+    city: "New York City",
+    country: "United States",
+    region: "Americas",
+    category: "City Hotel",
+    starRating: 5,
+    rating: 4.78,
+    reviewCount: 4012,
+    pricePerNight: 690,
+    currency: "USD",
+    heroImage: img("photo-1566073771259-6a8506099945"),
+    gallery: [
+      img("photo-1566073771259-6a8506099945"),
+      img("photo-1611892440504-42a792e24d32"),
+      img("photo-1582719508461-905c673771fd"),
+      img("photo-1542314831-068cd1dbfeeb")
+    ],
+    description: "A landmark address steps from Central Park, The Fifth Avenue Grand pairs Art Deco grandeur with a rooftop champagne bar, a marble spa, and suites overlooking the park canopy.",
+    highlights: [
+      "Steps from Central Park",
+      "Rooftop champagne bar",
+      "Art Deco landmark interiors",
+      "Park-view suites"
+    ],
+    amenities: stdAmenities.concat(["Rooftop bar", "Marble spa", "Park view", "Limousine service"]),
+    rooms: [
+      {
+        id: "r-nyc-deluxe",
+        name: "Deluxe King",
+        description: "Elegant king room with city views and a marble bath.",
+        pricePerNight: 690,
+        maxGuests: 2,
+        beds: "1 King",
+        sizeSqm: 34,
+        amenities: ["City view", "Marble bath", "Smart room"],
+        image: img("photo-1611892440504-42a792e24d32", 900)
+      },
+      {
+        id: "r-nyc-park",
+        name: "Park View Suite",
+        description: "Corner suite overlooking the Central Park canopy.",
+        pricePerNight: 1380,
+        maxGuests: 3,
+        beds: "1 King + Sofa",
+        sizeSqm: 70,
+        amenities: ["Park view", "Lounge access", "Butler"],
+        image: img("photo-1582719508461-905c673771fd", 900)
+      }
+    ],
+    reviews: [
+      {
+        id: "rv-9",
+        author: "Olivia P.",
+        country: "USA",
+        rating: 5,
+        date: "2026-04-02",
+        title: "Classic New York luxury",
+        body: "Woke up to the park out the window and ended the night on the rooftop with champagne. Service was impeccable."
+      }
+    ],
+    lat: 40.7644,
+    lng: -73.9735,
+    address: "Fifth Avenue, New York, NY",
+    featured: false,
+    badges: ["Park View", "Rooftop Bar", "Landmark"]
+  },
+  {
+    id: "h-bali-jungle",
+    slug: "ubud-canopy-bali",
+    name: "Ubud Canopy Retreat",
+    tagline: "Jungle pool villas above the Ayung River",
+    city: "Ubud, Bali",
+    country: "Indonesia",
+    region: "Asia",
+    category: "Villa",
+    starRating: 5,
+    rating: 4.9,
+    reviewCount: 1760,
+    pricePerNight: 540,
+    currency: "USD",
+    heroImage: img("photo-1537953773345-d172ccf13cf1"),
+    gallery: [
+      img("photo-1537953773345-d172ccf13cf1"),
+      img("photo-1518495973542-4542c06a5843"),
+      img("photo-1540541338287-41700207dee6"),
+      img("photo-1571896349842-33c89424de2d")
+    ],
+    description: "Nestled in the rainforest above the Ayung River, Ubud Canopy offers private pool villas, an open-air jungle spa, and farm-to-table dining among the rice terraces and birdsong.",
+    highlights: [
+      "Private infinity pool villas",
+      "Open-air jungle spa",
+      "Rice terrace yoga pavilion",
+      "Farm-to-table dining"
+    ],
+    amenities: stdAmenities.concat(["Private pool villa", "Jungle spa", "Yoga pavilion", "River view"]),
+    rooms: [
+      {
+        id: "r-bali-pool",
+        name: "Jungle Pool Villa",
+        description: "Private villa with an infinity pool over the canopy.",
+        pricePerNight: 540,
+        maxGuests: 2,
+        beds: "1 King",
+        sizeSqm: 110,
+        amenities: ["Private pool", "Outdoor shower", "Canopy view"],
+        image: img("photo-1518495973542-4542c06a5843", 900)
+      },
+      {
+        id: "r-bali-river",
+        name: "Riverfront Two-Bed Villa",
+        description: "Two-bedroom villa overlooking the Ayung River.",
+        pricePerNight: 980,
+        maxGuests: 4,
+        beds: "2 King",
+        sizeSqm: 180,
+        amenities: ["River view", "Private chef", "Two pools"],
+        image: img("photo-1540541338287-41700207dee6", 900)
+      }
+    ],
+    reviews: [
+      {
+        id: "rv-10",
+        author: "Liam C.",
+        country: "New Zealand",
+        rating: 5,
+        date: "2026-02-26",
+        title: "Magical jungle escape",
+        body: "Breakfast floating in our private pool surrounded by jungle. Pure serenity and the staff felt like family."
+      }
+    ],
+    lat: -8.4095,
+    lng: 115.1889,
+    address: "Ayung River Valley, Ubud, Bali",
+    featured: true,
+    badges: ["Pool Villa", "Jungle", "Wellness"]
+  },
+  {
+    id: "h-iceland-aurora",
+    slug: "aurora-glass-lodge-iceland",
+    name: "Aurora Glass Lodge",
+    tagline: "Glass-roof cabins under the Northern Lights",
+    city: "\xDEingvellir",
+    country: "Iceland",
+    region: "Europe",
+    category: "Mountain Lodge",
+    starRating: 4,
+    rating: 4.83,
+    reviewCount: 712,
+    pricePerNight: 730,
+    currency: "USD",
+    heroImage: img("photo-1531366936337-7c912a4589a7"),
+    gallery: [
+      img("photo-1531366936337-7c912a4589a7"),
+      img("photo-1490682143684-14369e18dce8"),
+      img("photo-1476610182048-b716b8518aae"),
+      img("photo-1418985991508-e47386d96a71")
+    ],
+    description: "Set in a lava field beside \xDEingvellir National Park, Aurora Glass Lodge offers heated glass-roof cabins built for aurora-watching, a geothermal lagoon, and a wood-fired Nordic kitchen.",
+    highlights: [
+      "Glass-roof aurora cabins",
+      "Private geothermal lagoon",
+      "Aurora wake-up call service",
+      "Wood-fired Nordic dining"
+    ],
+    amenities: ["Glass-roof cabin", "Geothermal lagoon", "Aurora alerts", "Nordic dining", "Free Wi-Fi", "Concierge"],
+    rooms: [
+      {
+        id: "r-ice-cabin",
+        name: "Aurora Glass Cabin",
+        description: "Heated cabin with a glass roof over the bed.",
+        pricePerNight: 730,
+        maxGuests: 2,
+        beds: "1 King",
+        sizeSqm: 32,
+        amenities: ["Glass roof", "Heated floors", "Aurora alert"],
+        image: img("photo-1490682143684-14369e18dce8", 900)
+      },
+      {
+        id: "r-ice-lagoon",
+        name: "Lagoon Suite",
+        description: "Suite with a private geothermal soaking pool.",
+        pricePerNight: 1180,
+        maxGuests: 2,
+        beds: "1 King",
+        sizeSqm: 54,
+        amenities: ["Private lagoon", "Fireplace", "Glass roof"],
+        image: img("photo-1476610182048-b716b8518aae", 900)
+      }
+    ],
+    reviews: [
+      {
+        id: "rv-11",
+        author: "Nora S.",
+        country: "Sweden",
+        rating: 5,
+        date: "2026-01-12",
+        title: "Saw the lights from bed",
+        body: "The aurora wake-up call meant we caught the lights dancing right above us through the glass roof. Unreal."
+      }
+    ],
+    lat: 64.2559,
+    lng: -21.1308,
+    address: "\xDEingvellir National Park, Iceland",
+    featured: false,
+    badges: ["Northern Lights", "Geothermal", "Glass Roof"]
+  },
+  {
+    id: "h-capetown-coast",
+    slug: "atlantic-bluff-cape-town",
+    name: "Atlantic Bluff Lodge",
+    tagline: "Cliffside suites where the ocean meets the mountain",
+    city: "Cape Town",
+    country: "South Africa",
+    region: "Africa",
+    category: "Boutique",
+    starRating: 5,
+    rating: 4.86,
+    reviewCount: 845,
+    pricePerNight: 620,
+    currency: "USD",
+    heroImage: img("photo-1580060839134-75a5edca2e99"),
+    gallery: [
+      img("photo-1580060839134-75a5edca2e99"),
+      img("photo-1571003123894-1f0594d2b5d9"),
+      img("photo-1602002418082-a4443e081dd1"),
+      img("photo-1564501049412-61c2a3083791")
+    ],
+    description: "Perched between Table Mountain and the Atlantic, Atlantic Bluff offers panoramic ocean suites, a clifftop infinity pool, and a wine-country concierge for Cape Winelands day trips.",
+    highlights: [
+      "Panoramic Atlantic Ocean views",
+      "Clifftop heated infinity pool",
+      "Table Mountain on the doorstep",
+      "Winelands & safari concierge"
+    ],
+    amenities: stdAmenities.concat(["Ocean view", "Infinity pool", "Wine concierge", "Sunset deck"]),
+    rooms: [
+      {
+        id: "r-cpt-ocean",
+        name: "Ocean Deluxe",
+        description: "Glass-fronted room with sweeping Atlantic views.",
+        pricePerNight: 620,
+        maxGuests: 2,
+        beds: "1 King",
+        sizeSqm: 40,
+        amenities: ["Ocean view", "Balcony", "Rain shower"],
+        image: img("photo-1571003123894-1f0594d2b5d9", 900)
+      },
+      {
+        id: "r-cpt-cliff",
+        name: "Clifftop Suite",
+        description: "Suite with a private terrace above the surf.",
+        pricePerNight: 1180,
+        maxGuests: 3,
+        beds: "1 King + Sofa",
+        sizeSqm: 78,
+        amenities: ["Private terrace", "Plunge pool", "Sunset view"],
+        image: img("photo-1564501049412-61c2a3083791", 900)
+      }
+    ],
+    reviews: [
+      {
+        id: "rv-12",
+        author: "Thabo N.",
+        country: "South Africa",
+        rating: 5,
+        date: "2026-03-15",
+        title: "Sunsets you won't forget",
+        body: "The infinity pool seems to spill into the ocean. The concierge planned a flawless Winelands day for us."
+      }
+    ],
+    lat: -33.9249,
+    lng: 18.4241,
+    address: "Camps Bay, Cape Town",
+    featured: false,
+    badges: ["Ocean View", "Infinity Pool", "Sunset"]
+  },
+  {
+    id: "h-paris-left-bank",
+    slug: "maison-rivoli-paris",
+    name: "Maison Rivoli",
+    tagline: "An intimate Haussmann townhouse near the Seine",
+    city: "Paris",
+    country: "France",
+    region: "Europe",
+    category: "Boutique",
+    starRating: 5,
+    rating: 4.84,
+    reviewCount: 1503,
+    pricePerNight: 710,
+    currency: "USD",
+    heroImage: img("photo-1502602898657-3e91760cbb34"),
+    gallery: [
+      img("photo-1502602898657-3e91760cbb34"),
+      img("photo-1549144511-f099e773c147"),
+      img("photo-1571003123894-1f0594d2b5d9"),
+      img("photo-1455587734955-081b22074882")
+    ],
+    description: "A discreet Haussmann townhouse moments from the Seine, Maison Rivoli pairs antique parquet and velvet salons with a hidden courtyard garden, a champagne library, and rooftop views of the rooftops of Paris.",
+    highlights: [
+      "Steps from the Seine & Louvre",
+      "Hidden courtyard garden",
+      "Champagne library",
+      "Rooftop Eiffel views"
+    ],
+    amenities: stdAmenities.concat(["Courtyard garden", "Champagne library", "Rooftop terrace"]),
+    rooms: [
+      {
+        id: "r-paris-classic",
+        name: "Parisian Classic",
+        description: "Velvet-accented room with French windows over the street.",
+        pricePerNight: 710,
+        maxGuests: 2,
+        beds: "1 Queen",
+        sizeSqm: 28,
+        amenities: ["French windows", "Marble bath", "Turndown"],
+        image: img("photo-1549144511-f099e773c147", 900)
+      },
+      {
+        id: "r-paris-eiffel",
+        name: "Rooftop Eiffel Suite",
+        description: "Top-floor suite with a terrace framing the Eiffel Tower.",
+        pricePerNight: 1620,
+        maxGuests: 2,
+        beds: "1 King",
+        sizeSqm: 55,
+        amenities: ["Eiffel view", "Terrace", "Champagne service"],
+        image: img("photo-1455587734955-081b22074882", 900)
+      }
+    ],
+    reviews: [
+      {
+        id: "rv-13",
+        author: "Claire D.",
+        country: "Belgium",
+        rating: 5,
+        date: "2026-05-01",
+        title: "The most romantic stay",
+        body: "Champagne in the library, then breakfast on the terrace with the Eiffel Tower in view. Perfection."
+      }
+    ],
+    lat: 48.8606,
+    lng: 2.3376,
+    address: "Rue de Rivoli, 75001 Paris",
+    featured: true,
+    badges: ["Eiffel View", "Boutique", "Romantic"]
+  }
+];
+
+// packages/data/src/destinations.ts
+var img2 = (id, w = 1e3) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
+var DESTINATIONS = [
+  {
+    id: "d-santorini",
+    name: "Santorini",
+    country: "Greece",
+    region: "Europe",
+    image: img2("photo-1570077188670-e3a8d69ac5ff"),
+    hotelCount: 1,
+    tagline: "Caldera sunsets & whitewashed cliffs"
+  },
+  {
+    id: "d-maldives",
+    name: "Maldives",
+    country: "Maldives",
+    region: "Asia",
+    image: img2("photo-1439066615861-d1af74d74000"),
+    hotelCount: 1,
+    tagline: "Overwater villas & coral reefs"
+  },
+  {
+    id: "d-zermatt",
+    name: "Zermatt",
+    country: "Switzerland",
+    region: "Europe",
+    image: img2("photo-1551524559-8af4e6624178"),
+    hotelCount: 1,
+    tagline: "Alpine peaks & glacier spas"
+  },
+  {
+    id: "d-dubai",
+    name: "Dubai",
+    country: "UAE",
+    region: "Middle East",
+    image: img2("photo-1512453979798-5ea266f8880c"),
+    hotelCount: 1,
+    tagline: "Sky-high glamour on the Palm"
+  },
+  {
+    id: "d-kyoto",
+    name: "Kyoto",
+    country: "Japan",
+    region: "Asia",
+    image: img2("photo-1545569341-9eb8b30979d9"),
+    hotelCount: 1,
+    tagline: "Temples, gardens & ryokan calm"
+  },
+  {
+    id: "d-bali",
+    name: "Bali",
+    country: "Indonesia",
+    region: "Asia",
+    image: img2("photo-1537953773345-d172ccf13cf1"),
+    hotelCount: 1,
+    tagline: "Jungle villas & rice terraces"
+  },
+  {
+    id: "d-paris",
+    name: "Paris",
+    country: "France",
+    region: "Europe",
+    image: img2("photo-1502602898657-3e91760cbb34"),
+    hotelCount: 1,
+    tagline: "Romance on the Left Bank"
+  },
+  {
+    id: "d-serengeti",
+    name: "Serengeti",
+    country: "Tanzania",
+    region: "Africa",
+    image: img2("photo-1516426122078-c23e76319801"),
+    hotelCount: 1,
+    tagline: "The Great Migration up close"
+  }
+];
+var EXPERIENCES = [
+  {
+    id: "x-catamaran",
+    title: "Private Caldera Catamaran",
+    category: "On the water",
+    location: "Santorini, Greece",
+    image: img2("photo-1502933691298-84fc14542831"),
+    durationHours: 5,
+    price: 480,
+    description: "Sunset sail around the volcanic caldera with a private chef and Greek wines."
+  },
+  {
+    id: "x-manta",
+    title: "Manta Ray Snorkel Safari",
+    category: "Ocean",
+    location: "Baa Atoll, Maldives",
+    image: img2("photo-1559827260-dc66d52bef19"),
+    durationHours: 3,
+    price: 320,
+    description: "Guided snorkel with manta rays in a UNESCO Biosphere reserve."
+  },
+  {
+    id: "x-kaiseki",
+    title: "Kaiseki & Tea Ceremony",
+    category: "Culinary",
+    location: "Kyoto, Japan",
+    image: img2("photo-1528360983277-13d401cdc186"),
+    durationHours: 3,
+    price: 260,
+    description: "A multi-course seasonal dinner followed by a private tea ceremony."
+  },
+  {
+    id: "x-balloon",
+    title: "Serengeti Balloon Safari",
+    category: "Adventure",
+    location: "Serengeti, Tanzania",
+    image: img2("photo-1507608616759-54f48f0af0ee"),
+    durationHours: 4,
+    price: 590,
+    description: "Dawn hot-air balloon over the plains with a champagne bush breakfast."
+  },
+  {
+    id: "x-vineyard",
+    title: "Brunello Cellar Tasting",
+    category: "Culinary",
+    location: "Tuscany, Italy",
+    image: img2("photo-1510812431401-41d2bd2722f3"),
+    durationHours: 2,
+    price: 180,
+    description: "Estate cellar tour and guided tasting of vintage Brunello di Montalcino."
+  },
+  {
+    id: "x-aurora",
+    title: "Northern Lights Super Jeep",
+    category: "Adventure",
+    location: "\xDEingvellir, Iceland",
+    image: img2("photo-1483347756197-71ef80e95f73"),
+    durationHours: 4,
+    price: 240,
+    description: "Chase the aurora across the highlands by super jeep with a local guide."
+  }
+];
+
+// packages/data/src/index.ts
+var CATEGORIES = [
+  "Beach Resort",
+  "City Hotel",
+  "Mountain Lodge",
+  "Boutique",
+  "Safari Lodge",
+  "Villa"
+];
+var REGIONS = [
+  "Europe",
+  "Asia",
+  "Africa",
+  "Americas",
+  "Middle East"
+];
+function getHotelById(id) {
+  return HOTELS.find((h) => h.id === id || h.slug === id);
+}
+function getFeaturedHotels() {
+  return HOTELS.filter((h) => h.featured);
+}
+function searchHotels(query = {}) {
+  let results = HOTELS.slice();
+  const { q, region, category, minPrice, maxPrice, minRating, sort } = query;
+  if (q && q.trim()) {
+    const term = q.trim().toLowerCase();
+    results = results.filter(
+      (h) => h.name.toLowerCase().includes(term) || h.city.toLowerCase().includes(term) || h.country.toLowerCase().includes(term) || h.tagline.toLowerCase().includes(term) || h.badges.some((b) => b.toLowerCase().includes(term))
+    );
+  }
+  if (region) results = results.filter((h) => h.region === region);
+  if (category) results = results.filter((h) => h.category === category);
+  if (typeof minPrice === "number") results = results.filter((h) => h.pricePerNight >= minPrice);
+  if (typeof maxPrice === "number") results = results.filter((h) => h.pricePerNight <= maxPrice);
+  if (typeof minRating === "number") results = results.filter((h) => h.rating >= minRating);
+  switch (sort) {
+    case "price-asc":
+      results.sort((a, b) => a.pricePerNight - b.pricePerNight);
+      break;
+    case "price-desc":
+      results.sort((a, b) => b.pricePerNight - a.pricePerNight);
+      break;
+    case "rating":
+      results.sort((a, b) => b.rating - a.rating);
+      break;
+    default:
+      results.sort((a, b) => Number(b.featured) - Number(a.featured) || b.rating - a.rating);
+  }
+  return results;
+}
+function computeAdminStats(extraBookings = 0, extraRevenue = 0) {
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"];
+  const baseRevenue = [184e3, 211e3, 248e3, 296e3, 342e3, 388e3];
+  const revenueByMonth = months.map((month, i) => ({
+    month,
+    revenue: baseRevenue[i] + (i === months.length - 1 ? extraRevenue : 0)
+  }));
+  const topDestinations = [
+    { name: "Maldives", bookings: 312 },
+    { name: "Santorini", bookings: 248 },
+    { name: "Dubai", bookings: 221 },
+    { name: "Bali", bookings: 198 },
+    { name: "Paris", bookings: 176 }
+  ];
+  const categoryCounts = {};
+  for (const h of HOTELS) {
+    categoryCounts[h.category] = (categoryCounts[h.category] ?? 0) + Math.round(h.reviewCount / 12);
+  }
+  const bookingsByCategory = Object.entries(categoryCounts).map(([category, count]) => ({
+    category,
+    count
+  }));
+  const totalBookings = 1184 + extraBookings;
+  const totalRevenue = revenueByMonth.reduce((s, m) => s + m.revenue, 0);
+  return {
+    totalBookings,
+    totalRevenue,
+    currency: "USD",
+    occupancyRate: 0.87,
+    avgNightlyRate: 912,
+    topDestinations,
+    revenueByMonth,
+    bookingsByCategory
+  };
+}
+export {
+  CATEGORIES,
+  DESTINATIONS,
+  EXPERIENCES,
+  HOTELS,
+  REGIONS,
+  computeAdminStats,
+  getFeaturedHotels,
+  getHotelById,
+  searchHotels
+};

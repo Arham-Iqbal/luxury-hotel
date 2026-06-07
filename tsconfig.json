@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "types": ["node"],
+    "paths": {
+      "@aurelia/data": ["./packages/data/src/index.ts"]
+    },
+    "baseUrl": "."
+  },
+  "include": ["api/**/*.ts", "mock-api/**/*.ts", "packages/data/**/*.ts", "scripts/**/*.mjs"]
+}
