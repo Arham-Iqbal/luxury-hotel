@@ -103,8 +103,18 @@ export async function createBooking(
 // ---- Admin (writes go live; web-only — playbook §4/§20) ----
 
 export async function fetchAdminStats(): Promise<AdminStats> {
-  const remote = await tryFetch<AdminStats>("/admin/stats");
-  return remote ?? computeAdminStats();
+  const base = computeAdminStats();
+  const remote = await tryFetch<Partial<AdminStats>>("/admin/stats");
+  // Merge over a complete local baseline so a partial/stale API response
+  // (e.g. an old mock-api missing the chart arrays) never breaks the UI.
+  if (!remote) return base;
+  return {
+    ...base,
+    ...remote,
+    revenueByMonth: remote.revenueByMonth ?? base.revenueByMonth,
+    topDestinations: remote.topDestinations ?? base.topDestinations,
+    bookingsByCategory: remote.bookingsByCategory ?? base.bookingsByCategory,
+  };
 }
 
 export async function fetchAdminBookings(): Promise<Booking[]> {

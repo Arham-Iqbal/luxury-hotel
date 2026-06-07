@@ -49,7 +49,7 @@ export default function Home() {
   const spotlight = all.find((h) => h.featured) ?? all[0];
 
   return (
-    <SafeAreaView edges={["top"]} style={styles.safe}>
+    <SafeAreaView edges={[]} style={styles.safe}>
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 80 + Math.max(insets.bottom, 12) }}
@@ -58,11 +58,11 @@ export default function Home() {
         <View style={[styles.hero, { height: isMobile ? 600 : 720 }]}>
           <Image source={{ uri: HERO }} style={StyleSheet.absoluteFill} contentFit="cover" />
           <LinearGradient colors={gradients.hero} style={StyleSheet.absoluteFill} />
-          {/* gold corner frame accent */}
-          <View pointerEvents="none" style={styles.frameTL} />
+          {/* gold corner frame accent (offset below the status bar on mobile) */}
+          <View pointerEvents="none" style={[styles.frameTL, { top: 18 + (isMobile ? Math.max(insets.top, 12) : 0) }]} />
           <View pointerEvents="none" style={styles.frameBR} />
 
-          <View style={[styles.heroContent, { maxWidth: contentMaxWidth }]}>
+          <View style={[styles.heroContent, { maxWidth: contentMaxWidth, paddingTop: isMobile ? Math.max(insets.top, 12) + spacing.md : 0 }]}>
             <View style={styles.heroKicker}>
               <View style={styles.heroKickerLine} />
               <Text style={styles.heroKickerText}>{BRAND.full.toUpperCase()}</Text>

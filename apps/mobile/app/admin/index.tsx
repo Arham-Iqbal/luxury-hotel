@@ -158,30 +158,43 @@ function Overview({ catalogCount, addedCount }: { catalogCount: number; addedCou
   const localBookings = useBookings((s) => s.bookings);
 
   if (stats.isLoading || !stats.data) return <ActivityIndicator color={colors.gold} style={{ marginTop: 60 }} />;
+
+  // Be defensive: a partial API response must never crash the dashboard.
   const s = stats.data;
+  const revenueByMonth = s.revenueByMonth ?? [];
+  const topDestinations = s.topDestinations ?? [];
+  const bookingsByCategory = s.bookingsByCategory ?? [];
+  const totalBookings = s.totalBookings ?? 0;
+  const totalRevenue = s.totalRevenue ?? 0;
+  const avgNightlyRate = s.avgNightlyRate ?? 0;
+  const currency = s.currency ?? "INR";
   const liveRevenue = localBookings.filter((b) => b.status !== "cancelled").reduce((sum, b) => sum + b.total, 0);
 
   return (
     <View>
       <View style={styles.kpiRow}>
-        <Kpi label="Total bookings" value={(s.totalBookings + localBookings.length).toLocaleString("en-IN")} icon="briefcase" delta="+12%" />
-        <Kpi label="Revenue (6mo)" value={formatPriceCompact(s.totalRevenue + liveRevenue)} icon="cash" delta="+18%" />
+        <Kpi label="Total bookings" value={(totalBookings + localBookings.length).toLocaleString("en-IN")} icon="briefcase" delta="+12%" />
+        <Kpi label="Revenue (6mo)" value={formatPriceCompact(totalRevenue + liveRevenue)} icon="cash" delta="+18%" />
         <Kpi label="Listed estates" value={String(catalogCount)} icon="business" delta={`+${addedCount} added`} />
-        <Kpi label="Avg nightly" value={formatPrice(s.avgNightlyRate, s.currency)} icon="trending-up" delta="+6%" />
+        <Kpi label="Avg nightly" value={formatPrice(avgNightlyRate, currency)} icon="trending-up" delta="+6%" />
       </View>
 
-      <View style={isMobile ? undefined : styles.chartsRow}>
-        <Panel title="Revenue by month" style={isMobile ? undefined : { flex: 1.4 }}>
-          <RevenueChart data={s.revenueByMonth} />
-        </Panel>
-        <Panel title="Top destinations" style={isMobile ? { marginTop: spacing.lg } : { flex: 1 }}>
-          <BarList data={s.topDestinations.map((d) => ({ label: d.name, value: d.bookings }))} suffix=" bookings" />
-        </Panel>
-      </View>
+      {revenueByMonth.length > 0 && (
+        <View style={isMobile ? undefined : styles.chartsRow}>
+          <Panel title="Revenue by month" style={isMobile ? undefined : { flex: 1.4 }}>
+            <RevenueChart data={revenueByMonth} />
+          </Panel>
+          <Panel title="Top destinations" style={isMobile ? { marginTop: spacing.lg } : { flex: 1 }}>
+            <BarList data={topDestinations.map((d) => ({ label: d.name, value: d.bookings }))} suffix=" bookings" />
+          </Panel>
+        </View>
+      )}
 
-      <Panel title="Bookings by property type" style={{ marginTop: spacing.lg }}>
-        <BarList data={s.bookingsByCategory.map((c) => ({ label: c.category, value: c.count }))} suffix="" tone="gold" />
-      </Panel>
+      {bookingsByCategory.length > 0 && (
+        <Panel title="Bookings by property type" style={{ marginTop: spacing.lg }}>
+          <BarList data={bookingsByCategory.map((c) => ({ label: c.category, value: c.count }))} suffix="" tone="gold" />
+        </Panel>
+      )}
     </View>
   );
 }
@@ -441,10 +454,12 @@ function ChipRow({ options, value, onPick }: { options: string[]; value: string;
 }
 
 function RevenueChart({ data }: { data: AdminStats["revenueByMonth"] }) {
-  const max = Math.max(...data.map((d) => d.revenue));
+  const rows = data ?? [];
+  if (!rows.length) return null;
+  const max = Math.max(...rows.map((d) => d.revenue), 1);
   return (
     <View style={styles.revChart}>
-      {data.map((d) => (
+      {rows.map((d) => (
         <View key={d.month} style={styles.revCol}>
           <Text style={styles.revValue}>{(d.revenue / 10000000).toFixed(1)}Cr</Text>
           <View style={styles.revBarTrack}><View style={[styles.revBar, { height: `${(d.revenue / max) * 100}%` }]} /></View>
@@ -456,10 +471,12 @@ function RevenueChart({ data }: { data: AdminStats["revenueByMonth"] }) {
 }
 
 function BarList({ data, suffix, tone = "navy" }: { data: { label: string; value: number }[]; suffix: string; tone?: "navy" | "gold" }) {
-  const max = Math.max(...data.map((d) => d.value));
+  const rows = data ?? [];
+  if (!rows.length) return null;
+  const max = Math.max(...rows.map((d) => d.value), 1);
   return (
     <View style={{ gap: spacing.md }}>
-      {data.map((d) => (
+      {rows.map((d) => (
         <View key={d.label}>
           <View style={styles.barHead}>
             <Text style={styles.barLabel}>{d.label}</Text>
